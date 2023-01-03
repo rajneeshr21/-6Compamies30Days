@@ -6,11 +6,9 @@ public:
         sort(nums.begin(),nums.end());
         for(int i=0;i<n;i++){
             for(int j=0;j<i;j++){
-                if(nums[i]%nums[j]==0){
-                    if(checker[i]<=checker[j]){
-                        lis[i]=j;
-                        checker[i]=checker[j]+1;
-                    }
+                if(nums[i]%nums[j]==0 && checker[i]<=checker[j]){
+                    lis[i]=j;
+                    checker[i]=checker[j]+1;
                     if(checker[i]>maxi){
                         maxi=checker[i];
                         pos=i;
